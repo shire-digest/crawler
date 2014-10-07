@@ -7,6 +7,6 @@
 (deftype EchoCrawler []
   Crawler
   (parse [this link]
-    (list (post/make :link link :title link))))
+    (list (post/make :link (:url link) :title (:url link)))))
 
 (def echo-crawler (EchoCrawler.))
