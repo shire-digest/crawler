@@ -19,8 +19,10 @@
   "Extract tfa content."
   [page]
   (let [node-text ($x:text "//div[@id='mp-tfa']" page)
-        splited-text (string/split node-text #"\n")]
-    (first splited-text)))
+        content (last (re-find #"(?s)(.*)\(Full.*article\..*" node-text))]
+    (if content
+      (string/trim content)
+      nil)))
 
 (defn- extract-tfa-meta
   "Extract article meta."
