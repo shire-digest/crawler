@@ -7,6 +7,7 @@
 (deftest test-echo-crawler
   (testing "EchoCrawler parse."
     (let [test-link "http://example.com"
+          echo-crawler (create {})
           post (first (parse echo-crawler (link/parse-string test-link)))]
       (is (= (:link post) test-link))
       (is (= (:title post) test-link)))))

@@ -52,4 +52,8 @@
           get-content (grab-content url)]
       (parse-tfa (get-content)))))
 
-(def tfa-crawler (TFACrawler.))
+
+(defn create
+  "Create a today-featured-article crawler."
+  [options]
+  (TFACrawler.))

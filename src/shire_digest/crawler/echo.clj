@@ -9,4 +9,8 @@
   (parse [this link]
     (list (post/make :link (:url link) :title (:url link)))))
 
-(def echo-crawler (EchoCrawler.))
+
+(defn create
+  "Create a echo crawler."
+  [options]
+  (EchoCrawler.))
