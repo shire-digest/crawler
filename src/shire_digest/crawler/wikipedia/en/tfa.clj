@@ -3,7 +3,7 @@
   (:require [clojure.string :as string]
             [shire-digest.meta.post :as post]
             [shire-digest.crawler.core :refer [Crawler parse]]
-            [shire-digest.crawler.utils :refer [today]]
+            [shire-digest.meta.utils :refer [today]]
             [clj-xpath.core :refer [$x $x:text]]))
 
 (def tfa-author "Wikipedia")
