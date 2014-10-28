@@ -1,4 +1,4 @@
-(defproject shire-digest.crawler "0.0.1"
+(defproject shire-digest.crawler "0.0.2-SNAPSHOT"
   :description ";)"
   :license {:name "SMPPL"
             :url "https://github.com/xhacker/SMPPL/blob/master/SMPPL-Freeware.md"}
