@@ -1,19 +1,15 @@
 (ns shire-digest.crawler.wikipedia.en.tfa
-  "Wikipedia today featured articles crawler."
+  "Wikipedia today featured article crawler."
   (:require [clojure.string :as string]
             [shire-digest.meta.post :as post]
             [shire-digest.crawler.core :refer [Crawler parse]]
+            [shire-digest.crawler.utils :refer [grab-content]]
             [shire-digest.meta.utils :refer [today]]
             [clj-xpath.core :refer [$x $x:text]]))
 
 (def tfa-author "Wikipedia")
 (def wikipedia-base-url "http://en.wikipedia.org")
 (defn- wikipedia-page-url [item] (str wikipedia-base-url item))
-
-(defn- grab-content
-  "Grab and memoize url's content."
-  [url]
-  (memoize (fn [] (slurp url))))
 
 (defn- extract-tfa-text
   "Extract tfa content."
