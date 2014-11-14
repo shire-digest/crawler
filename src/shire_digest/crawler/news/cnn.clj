@@ -14,7 +14,7 @@
 (defn- extract-news
   "Extract a news."
   [entity]
-  (let [title (:content entity)
+  (let [title (first (:content entity))
         link (page-url (-> entity :attrs :href))]
     (post/make :link link :title title :summary ""
                :author author :date (today))))
